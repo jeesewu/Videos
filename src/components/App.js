@@ -1,7 +1,21 @@
 import React from "react";
 
-const App = (props) => {
-  return <div>App</div>;
-};
+import SearchBar from "./SearchBar";
+import VideoDetail from "./VideoDetail";
+import VideoList from "./VideoList";
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <SearchBar />
+        <div>
+          <VideoDetail />
+          <VideoList />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default App;
