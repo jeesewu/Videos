@@ -4,10 +4,10 @@ class VideoDetail extends React.Component {
   render() {
     return (
       <div>
-        <iframe>Video</iframe>
+        <iframe src={this.props.videoURL}></iframe>
         <div>
-          <h3>Video-Title</h3>
-          <p>Video-Detail</p>
+          <h3>{this.props.title}</h3>
+          <p>{this.props.description}</p>
         </div>
       </div>
     );
