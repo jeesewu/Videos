@@ -14,7 +14,10 @@ class App extends React.Component {
       params: { q: term, part: "snippet", maxResults: 5 },
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   handleVideoSelect = (video) => {
