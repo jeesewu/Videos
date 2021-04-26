@@ -5,6 +5,8 @@ import VideoDetail from "./VideoDetail";
 import VideoList from "./VideoList";
 
 class App extends React.Component {
+  state = { videos: [], selectedVideo: {} };
+
   render() {
     return (
       <div>
