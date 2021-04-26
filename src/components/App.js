@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import youtube from "../apis/youtube";
 
 import SearchBar from "./SearchBar";
 import VideoDetail from "./VideoDetail";
@@ -9,18 +9,9 @@ class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   handleSearchSubmit = async (term) => {
-    const API_KEY = "AIzaSyAs5Ze8wcmr807LNWPKsD5gyEn077YfkYs";
-    const response = await axios.get(
-      "https://www.googleapis.com/youtube/v3/search",
-      {
-        params: {
-          part: "snippet",
-          maxResults: 5,
-          key: API_KEY,
-          q: term,
-        },
-      }
-    );
+    const response = await youtube.get("/search", {
+      params: { q: term, part: "snippet", maxResults: 5 },
+    });
 
     this.setState({ videos: response.data.items });
   };

@@ -4,7 +4,7 @@ class VideoDetail extends React.Component {
   render() {
     const { video } = this.props;
     if (!video) {
-      return <div>Loading...</div>;
+      return null;
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
