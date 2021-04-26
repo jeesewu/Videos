@@ -2,9 +2,10 @@ import React from "react";
 
 class VideoItem extends React.Component {
   render() {
-    const { video } = this.props;
+    const { video, onVideoSelect } = this.props;
+
     return (
-      <div>
+      <div onClick={() => onVideoSelect(video)}>
         <img
           src={video.snippet.thumbnails.default.url}
           alt={video.snippet.title}

@@ -2,12 +2,18 @@ import React from "react";
 
 class VideoDetail extends React.Component {
   render() {
+    const { video } = this.props;
+    if (!video) {
+      return <div>Loading...</div>;
+    }
+
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     return (
       <div>
-        <iframe src={this.props.url}></iframe>
+        <iframe src={videoSrc}></iframe>
         <div>
-          <h3>{this.props.title}</h3>
-          <p>{this.props.description}</p>
+          <h3>{video.snippet.title}</h3>
+          <p>{video.snippet.description}</p>
         </div>
       </div>
     );
